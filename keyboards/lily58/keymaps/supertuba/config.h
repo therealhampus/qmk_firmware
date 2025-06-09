@@ -24,10 +24,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define MASTER_LEFT
 
-#define TAPPING_TERM 150
+#define TAPPING_TERM 160
 #define QUICK_TAP_TERM 0
 #define QUICK_TAP_TERM_PER_KEY
 #define PERMISSIVE_HOLD
+#define CHORDAL_HOLD
 
 #undef RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS
@@ -36,9 +37,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_HUE_STEP 10
 #define RGBLIGHT_SAT_STEP 17
 #define RGBLIGHT_VAL_STEP 17
-
-// achordion
-#define ACHORDION_STREAK
 
 // Caps word enabled
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
