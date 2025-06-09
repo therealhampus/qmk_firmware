@@ -13,5 +13,4 @@ CAPS_WORD_ENABLE = yes      # Caps word feature
 
 # If you want to change the display of OLED, you need to change here
 SRC +=  ./lib/layer_state_reader.c \
-        ./lib/logo_reader.c \
-        features/achordion.c
+        ./lib/logo_reader.c

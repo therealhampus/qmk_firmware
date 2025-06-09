@@ -1,5 +1,4 @@
 #include QMK_KEYBOARD_H
-#include "features/achordion.h"
 
 /* THIS FILE WAS GENERATED!
  *
@@ -13,6 +12,15 @@ enum layer_number {
   _RAISE,
   _ADJUST,
 };
+
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+    LAYOUT(
+        'L', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 'R',
+                  'L', 'L', '*', 'L',            'R', '*', 'R', 'R'
+    );
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* QWERTY
@@ -174,19 +182,6 @@ bool oled_task_user(void) {
     return false;
 }
 #endif // OLED_ENABLE
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-   if (!process_achordion(keycode, record)) { return false; }
-  return true;
-}
-
-void matrix_scan_user(void) {
-  achordion_task();
-}
-
-uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-  return 800;  // Give achordion 800 ms to make changes.
-}
 
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
